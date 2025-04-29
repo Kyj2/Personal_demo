@@ -97,6 +97,7 @@ df = pd.read_csv('./df_rivi_.csv', index_col=False)
 df_chart=pd.read_csv('./df_chart_.csv', index_col=False)
 #df_chart.index=range(1,len(df)+1)
 df_meta=pd.read_csv('./cluster_meta.csv')
+
 #-------------------------------------------------------------------------------------
 
 
