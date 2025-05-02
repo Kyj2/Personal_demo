@@ -94,7 +94,7 @@ col1, col2 = st.columns([1, 1])
 df = pd.read_csv('./df_rivi_.csv', index_col=False)
 #df.index= range(1,len(df)+1)
 
-df_chart=pd.read_csv('./df_chart_.csv', index_col=False)
+df_chart=pd.read_csv('./df_chart__.csv', index_col=False)
 #df_chart.index=range(1,len(df)+1)
 df_meta=pd.read_csv('./cluster_meta.csv')
 
@@ -131,6 +131,7 @@ if ID_input.isdigit():
             st.pyplot(fig_a)
             sub=chart_filter[chart_filter['MP']=='MP_A']['sub_cluster'].iloc[0]
             mpa_ex=df_meta[df_meta['sub_cluster']==sub]
+            risk_level=chart_filter[chart_filter['MP']=='MP_A']['risk_label'].iloc[0]
 
             # 2️⃣ 설명 출력
             st.markdown(
@@ -148,7 +149,7 @@ if ID_input.isdigit():
                 {mpa_ex.iloc[0]['portfolio_description']}<br><br>  
 
                 
-                <span style="font-size: 10px; color: black; font-weight: bold;">다소 낮은 위험</span>
+                <span style="font-size: 10px; color: black; font-weight: bold;">{risk_level}</span>
                 </div>
                 """,
                 unsafe_allow_html=True
@@ -171,6 +172,7 @@ if ID_input.isdigit():
             st.pyplot(fig_b)
             sub=chart_filter[chart_filter['MP']=='MP_B']['sub_cluster'].iloc[0]
             mpa_ex=df_meta[df_meta['sub_cluster']==sub]
+            risk_level=chart_filter[chart_filter['MP']=='MP_B']['risk_label'].iloc[0]
 
 
             st.markdown(
@@ -188,7 +190,7 @@ if ID_input.isdigit():
                 {mpa_ex.iloc[0]['portfolio_description']}<br><br>  
 
                 
-                <span style="font-size: 10px; color: black; font-weight: bold;">다소 낮은 위험</span>
+                <span style="font-size: 10px; color: black; font-weight: bold;">{risk_level}</span>
                 </div>
                 """,
                 unsafe_allow_html=True
@@ -210,6 +212,7 @@ if ID_input.isdigit():
             st.pyplot(fig_c)
             sub=chart_filter[chart_filter['MP']=='MP_C']['sub_cluster'].iloc[0]
             mpa_ex=df_meta[df_meta['sub_cluster']==sub]
+            risk_level=chart_filter[chart_filter['MP']=='MP_C']['risk_label'].iloc[0]
 
             st.markdown(
                 f"""
@@ -226,7 +229,7 @@ if ID_input.isdigit():
                 {mpa_ex.iloc[0]['portfolio_description']}<br><br>  
 
                 
-                <span style="font-size: 10px; color: black; font-weight: bold;">다소 낮은 위험</span>
+                <span style="font-size: 10px; color: black; font-weight: bold;">{risk_level}</span>
                 </div>
                 """,
                 unsafe_allow_html=True
